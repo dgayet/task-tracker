@@ -1,9 +1,12 @@
 // import './App.css';
+import { useState, useEffect } from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import {task} from './components/Tasks'
-import { useState, useEffect } from 'react'
 import AddTask from './components/AddTask'
+import Footer from './components/Footer'
+import About from './components/About'
 
 const server = 'http://localhost:5001/tasks'
 
@@ -78,6 +81,7 @@ function App() {
   }
 
   return (
+    <Router>
     <div className="container">
       <Header title="Task Tracker" onClick={() => setShowAddTask(!showAddTask)}/>
       {showAddTask ? <AddTask onAdd={addTask}/> : ' '}
@@ -86,6 +90,7 @@ function App() {
                                  onToggle={toggleReminder}/> :
       <span className="message">there are no tasks left.</span>}
     </div>
+    </Router>
   );
 }
 

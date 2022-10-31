@@ -176,8 +176,17 @@ body {
 }
 
 footer {
+  height: 100px;
   margin-top: 30px;
   text-align: center;
+}
+
+footer > p {
+  color:rgb(76, 73, 73);
+}
+
+footer > a:visited {
+  color:#6a2787;
 }
 
 .image{
