@@ -2,6 +2,8 @@ import React from 'react'
 import Task from './Task'
 import {task} from './Task'
 
+export type {task}
+
 
 interface Props {
     tasks: task[],
@@ -14,8 +16,8 @@ function Tasks({tasks, onDelete, onToggle}: Props) {
 
     return (
         <div className = "tasksContainer">
-            {tasks.map((task: task) => (
-                <Task key={task.id} task={task} 
+            {tasks.map((task: task, index) => (
+                <Task key={index} task={task} 
                       onDelete={onDelete}
                       onToggle={onToggle}/>
             ))}
